@@ -1,0 +1,33 @@
+#Maintainer: Terry M. Poulin <BigBoss1964@gmail.com>
+#
+# Please report any issues with this package via Github:
+#
+# 	http://github.com/Spidey01/zenwalk-transset-df-package/issues
+#
+# If you must send an E-Mail, prefix the subject line with the package name, or
+# some other means of identifying it as NON-SAM.
+
+pkgname=transset-df
+pkgver=6
+pkgrel=1
+zenver=64
+arch=i486
+source=("http://forchheimer.se/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+docs=("README" "ChangeLog")
+url="http://forchheimer.se/transset-df/"
+
+slackdesc=\
+(
+#|-----handy-ruler------------------------------------------------------|
+"$pkgname - change transparency properties of a window"
+""
+"This is a patched version of xorg's transset that offers more options"
+"for selecting the window to modify. Refer to --help for details"
+)
+
+
+build() {
+	cd $startdir/src/$pkgname-$pkgver
+	make || return 1
+	make install DESTDIR=$startdir/pkg
+} 
