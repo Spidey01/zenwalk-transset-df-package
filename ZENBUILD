@@ -13,6 +13,7 @@ pkgrel=1
 zenver=64
 arch=i486
 source=("http://forchheimer.se/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sourcetemplate="http://dl.dropbox.com/u/7012687/zenwalk/packages/${pkgname}"
 docs=("README" "ChangeLog")
 url="http://forchheimer.se/transset-df/"
 
