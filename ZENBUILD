@@ -25,9 +25,20 @@ slackdesc=\
 "for selecting the window to modify. Refer to --help for details"
 )
 
-
 build() {
+	# I assume this script is run in a bash compatible.
+	local builddeps
+
+	builddeps="xcomposite xfixes xdamage xrender"
+
 	cd $startdir/src/$pkgname-$pkgver
-	make || return 1
-	make install DESTDIR=$startdir/pkg
+
+	# the makefile ignores everything, so just do it manually.
+	#
+	gcc $CFLAGS -lm `pkg-config --cflags --libs ${builddeps}` \
+		dsimple.c transSet.c -o "${pkgname}"
+
+	# make install just uses cp binary /usr/bin; so skip make install.
+	mkdir -p -m 755 "${startdir}/pkg/usr/bin"
+	install -ps "${pkgname}" "${startdir}/pkg/usr/bin/"
 } 
