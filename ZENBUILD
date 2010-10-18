@@ -5,7 +5,7 @@
 # 	http://github.com/Spidey01/zenwalk-transset-df-package/issues
 #
 # If you must send an E-Mail, prefix the subject line with the package name, or
-# some other means of identifying it as NON-SAM.
+# some other means of identifying it as NON-SPAM.
 
 pkgname=transset-df
 pkgver=6
