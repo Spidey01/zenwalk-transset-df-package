@@ -10,7 +10,7 @@
 pkgname=transset-df
 pkgver=6
 pkgrel=1
-zenver=64
+zenver=66
 arch=i486
 source=("http://forchheimer.se/${pkgname}/${pkgname}-${pkgver}.tar.gz")
 sourcetemplate="http://dl.dropbox.com/u/7012687/zenwalk/packages/${pkgname}"
